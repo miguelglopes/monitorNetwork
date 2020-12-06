@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 python-nmap = "*"
-peewee = "*"
 python-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 jupyterlab = "*"
