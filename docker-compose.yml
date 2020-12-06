@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+
+  monitor:
+    build: .
+    volumes:
+      - type: bind
+        source: ./data
+        target: /app/data
+    command: pipenv run python3 ./src/monitor.py
