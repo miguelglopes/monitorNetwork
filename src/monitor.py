@@ -6,7 +6,7 @@ import gotify
 def getCurrentDevices():
 
     nm=nmap.PortScanner()
-    output=nm.scan(hosts='192.168.1.0/24', arguments='-sP')
+    output=nm.scan(hosts='192.168.1.0/24', arguments='-sP --system-dns')
 
     currentHosts = model.Hosts()
     for key, value in output["scan"].items():
