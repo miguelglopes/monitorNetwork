@@ -4,8 +4,10 @@ services:
 
   monitor:
     build: .
+    user: root
     volumes:
       - type: bind
         source: ./data
         target: /app/data
     command: pipenv run python3 ./src/monitor.py
+    network_mode: host
