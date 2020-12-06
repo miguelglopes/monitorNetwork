@@ -12,7 +12,10 @@ def getCurrentDevices():
     for key, value in output["scan"].items():
         name = value["hostnames"][0]["name"]
         ip=value["addresses"]["ipv4"]
-        mac=value["addresses"]["mac"]
+        try:
+            mac=value["addresses"]["mac"]
+        except:
+            mac="no_mac"
         host = model.Host(mac, ip, name)
         currentHosts.add(host)
     
