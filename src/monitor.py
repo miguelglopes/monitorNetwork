@@ -34,14 +34,16 @@ def getDevicesDif(old, new):
 
 def run():
     currentHosts = getCurrentDevices()
-    oldHosts=model.Hosts.fromFile()
-    dif = getDevicesDif(currentHosts, oldHosts)
-    currentHosts.toFile()
 
-    if dif!="":
-        got=gotify.Gotify()
-        got.pushMessage(dif, "Devices Dif")
+    #devices
+    # oldHosts=model.Hosts.fromFile()
+    # dif = getDevicesDif(currentHosts, oldHosts)
+    # currentHosts.toFile()
+    # if dif!="":
+    #     got=gotify.Gotify()
+    #     got.pushMessage(dif, "Devices Dif")
 
+    #macadresses
     macCurrent = {c["mac"] for c in currentHosts}
     macOld=model.Macs.fromFile()
     dif=macCurrent.difference(macOld)
